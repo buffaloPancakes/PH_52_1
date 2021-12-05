@@ -1,0 +1,18 @@
+        Scanner scan = new Scanner(System.in);
+
+        
+        System.out.println("--------------\n" + "Part 3\n" + "--------------\n" +
+                "Please enter an integer between 0 and 100 and we'll count down to zero:");
+        int p2_1 = scan.nextInt();
+        System.out.println("Enter a step size for counting down:");
+        int p2_2 = scan.nextInt();
+        
+        // Let's say I enter 12 and 3
+        while (p2_1 >= p2_2) {  // While 12 is greater than 3, do this:   
+            int whale_barf = (p2_1 - p2_2);  // Whale_barf is equal to 9
+            System.out.println(whale_barf);  // Print 9... repeat because 12 still greater than 9
+        }
+        
+        // If the loop can only terminate by p2_1 being less than p2_2, then you need something in your loop
+        // so that p2_1 gets smaller each time or p2_2 gets larger each time.  if they don't converge, it runs
+        // infinitely.
