@@ -1,0 +1,50 @@
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("--------------\n" + "Part 1\n" + "--------------\n" +
+                "Please enter two integers I'll list the numbers between them.");
+        int p1_1 = scan.nextInt();
+        int p1_2 = scan.nextInt();
+
+        // Let's say I type in 10 and 20
+
+        int Num1 = p1_1;
+        int Num2 = p1_2;
+        System.out.println("Your number range is:");
+        while (p1_1 <= p1_2) {
+            System.out.print(p1_1++ + " ");
+        }
+
+        // Once you have reached this point, loop has appropriately printed 10 through 20
+
+        System.out.println();
+        System.out.println("After first loop:");
+        System.out.println(p1_1);  // This is 21
+        System.out.println(p1_2);  // This is 20.  Loop exited because 21 > 20.
+        System.out.println();
+
+        while (p1_2 <= p1_1) {  // This says "While 20 is less than or equal to 21, do this:
+            
+            System.out.print(p1_2++ + " ");
+            // First loop: prints 20 and then increases p1_2 to 21
+            // Second loop: prints 21 and then increases p1_2 to 22.  Loop exits because 22 not less than 21.
+            // Why are we printing 21?  it is not in range of 10->20
+        }
+        System.out.println();
+        System.out.println("After second loop:");
+        System.out.println(p1_1);  // This is 21
+        System.out.println(p1_2);  // This is 22
+        System.out.println();
+        
+        // Now, when you reach this part, you are saying "While 21 is less than 22, print Num2 and then decrease Num2
+        System.out.println("In reverse order");
+        while (p1_1 <= p1_2) {
+            System.out.print(Num2-- + " ");
+            // First loop:  21 <= 22, so print 20
+            // Second loop:  21 <= 22, so print 19
+            // Third loop:  21 <= 22, so print 18
+            // etc,
+            // 21 will always be less than 22, so Num2 will keep decreasing until Java explodes
+        }
+        while (p1_2 <= p1_1) {  // You will never reach this line because th eloop above will never terminate 
+            System.out.print(Num1-- + " ");
+        }
